@@ -1,0 +1,145 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .head-title{
+        text-align: center;
+        background: red;
+        padding: 5px 20px;
+        border-radius: 5px;
+        box-shadow: 4px 4px 10px #111;
+        margin: 10px auto 20px auto;
+    }
+    .left-block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .row{            
+            .card-wrap{ 
+                padding: 5px;
+               
+                .card{
+                    padding: 5px;
+                    margin: 5px;
+                    cursor: pointer;
+                    transition: .5s;
+                    border: 1px solid #111;
+                    &:hover{
+                        box-shadow: 3px 3px 10px #111;
+                    }
+                    h5{
+                        text-align: center;
+                    }
+                    .row{ 
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                        margin: 0 auto;
+                        .btn {
+                            padding: 3px;
+                            color: #fff;
+                            margin: 3px;
+                            font-size: 10px;
+                            outline: none;
+                        }
+                        .normal{
+                            background: #00FFA9;
+                        }
+                        .fighting{
+                            background: #FF0033;
+                        }
+                        .flying{
+                            background: #96C9FF;
+                        }
+                        .poison{
+                            background: #987BA7;
+                        }
+                        .ground{
+                            background: #5E3626;
+                        }
+                        .rock{
+                            background: #282C59;
+                        }
+                        .bug{
+                            background: #0C7159;
+                        }
+                        .ghost{
+                            background: #111;
+                        }
+                        .fire{
+                            background: #EE8884;
+                        }
+                        .water{
+                            background: #1730EE;
+                        }
+                        .grass{
+                            background: #A6D68D;
+                        }
+                        .electric{
+                            background: #FFE084;
+                        }
+                        .psychic{
+                            background: #FF73EC;
+                        }
+                        .ice{
+                            background: #fff;
+                            color: #2860E2;
+                        }
+                        .dragon{
+                            background: #656800;
+                        }
+                        .fairy{
+                            background: #FF2400;
+                        }
+                        .steel{
+                            background: #7D7D7D;
+                        }
+                    }
+                    
+                }
+            }
+        }
+        .block{
+            overflow-y: scroll;
+            height: 510px;
+        }
+        .more{
+            margin: 10px 0;
+        }
+
+    }
+    .right-block{
+        .description{
+            padding: 0 10px 10px 10px;
+            box-shadow: 4px 4px 15px #111;
+            border-radius: 10px;
+            text-align: center;
+            transition: .5s;
+            width: 300px;
+            margin: 0 auto;
+            display: none;
+            th{
+                padding: 4px 10px;
+            }
+            td{
+                padding: 4px 10px;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .container{
+        flex-direction: column;
+        align-items: center;
+        .right-block{
+            display: flex;
+            justify-content: center;
+            order: -1;
+            margin: 0 0 20px 0;
+
+        }
+    }
+    
+}

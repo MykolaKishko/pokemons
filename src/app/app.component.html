@@ -1,0 +1,58 @@
+<div class="container">
+  <h2 class="head-title">POKEDEX</h2>
+</div>
+<div class="container">
+  <div class="left-block col-lg-6">
+    <div class="row block">
+
+      <div class="card-wrap col-lg-4 col-md-6 col-sm-6 col-6" *ngFor="let card of card; let i = index">
+        <div class="card" id="{{ i }}" #qq  (click)="selectCard(qq)">
+          <div class="wrapper">
+            <img class="col-lg-12" src="{{ card.photo }}" alt="">
+          </div>
+          <h5 class="name">{{ card.name }}</h5>
+          <div class="row">
+            <button  *ngFor="let btn of card.types; let i = index" class="btn {{btn.type.name}}">{{ btn.type.name }} </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button (click)="getPosts()" class="btn btn-primary more">Load more</button>
+  </div>
+  <div class="right-block col-lg-4">
+    <div class="description" id="description">
+      <div class="wrapper">
+        <img class="col-lg-12" src="{{card[selectedCard].photo}}" alt="">
+      </div>
+      <h3 class="title">{{card[selectedCard].name}} #{{card[selectedCard].index}}</h3>
+      <table class="table table-hover col-12">
+        <tbody>
+          <tr >
+            <th scope="row">Type</th>
+            <td >{{ card[selectedCard].types[0].type.name }}</td>
+          </tr>
+          <tr class="table-active">
+            <th scope="row"> Total moves</th>
+            <td>{{card[selectedCard].moves}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Base experience</th>
+            <td>{{card[selectedCard].baseEx}}</td>
+          </tr>
+          <tr class="table-active">
+            <th scope="row">Height</th>
+            <td>{{card[selectedCard].height}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Weight</th>
+            <td>{{card[selectedCard].weight}}</td>
+          </tr>
+          <tr class="table-active">
+            <th scope="row">Index</th>
+            <td>{{card[selectedCard].index}}</td>
+          </tr>            
+        </tbody>
+      </table> 
+    </div>
+  </div>
+</div>
